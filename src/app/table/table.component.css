@@ -1,0 +1,29 @@
+.pie {
+    display:block;
+    width: 200px;
+}
+
+.tableDistro {
+    display: grid;
+    grid-template-columns: 2.5fr 0.75fr;
+    background-color: white;
+}
+
+.tableDistro .hidePie {
+    justify-self: right;
+    grid-column: -2 / -1;
+}
+
+.showTitle {
+    display: block;
+    justify-self: right;
+}
+
+.hideTitle {
+    display: none;
+}
+
+.chartContainer {
+    display: flex;
+    justify-content: center;
+}
