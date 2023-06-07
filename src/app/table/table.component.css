@@ -1,6 +1,7 @@
 .pie {
     display:block;
     width: 200px;
+    justify-content: center;
 }
 
 .tableDistro {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'app-pie',
@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
     styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit, OnChanges {
+    
     array: string[] = ['Shirts', 'Pants', 'Shoes'];
     @Input() dataNumbers: number[] = [];
     @Input() requestedPieChart: boolean = false;
@@ -20,11 +21,9 @@ export class PieComponent implements OnInit, OnChanges {
         if (this.requestedPieChart) {
             this.func();
         }
-        console.log(changes);
     }
 
     func() {
-
         const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');
         this.data = {
@@ -47,8 +46,24 @@ export class PieComponent implements OnInit, OnChanges {
                         usePointStyle: true,
                         color: textColor
                     }
+                },
+                tooltip: {
+                    // backgroundColor: function (context: any) {
+                    // const labelName = context.tooltip.title;
+                    // debugger
+                    // if (labelName == 'Shirts') {
+                    //     return '#55aba8';
+                    // } else if (labelName == 'Pants') {
+                    //     return '#ab5555';
+                    // } else if (labelName == 'Shoes') {
+                    //     return '#5575ab';
+                    // } else {
+                    //     return '#000';
+                    // }
                 }
             }
-        };
-    }
+        }
+    };
 }
+
+
