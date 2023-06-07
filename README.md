@@ -6,6 +6,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+Json-server: Install the json-server package (npm i json-server), then create a custom db that you can host via cli 
+(npm json-server --watch your_database_name.json -p 3000)
+
+In my case, the API service in this project reads from 'info' of the 'db.json' server, which also contains the array of data
+that is utilized in the pie chart component.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
