@@ -6,9 +6,10 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
     styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit, OnChanges {
-    array: string[] = ['Shirts', 'Pants', 'Shoes'];
+    array: any = ['Charlie', 'Dereck', 'Amelie'];
     @Input() dataNumbers: number[] = [];
     @Input() requestedPieChart: boolean = false;
+    categories: any = ['Clothes', 'Accessories', 'Jewelry']
     data: any;
     options: any;
 
@@ -30,7 +31,7 @@ export class PieComponent implements OnInit, OnChanges {
         this.data = {
             labels: this.array,
             datasets: [
-                {
+                {   
                     data: this.dataNumbers,
                     backgroundColor: [documentStyle.getPropertyValue('--cyan-400'), documentStyle.getPropertyValue('--red-400'), documentStyle.getPropertyValue('--blue-400')],
                     hoverBackgroundColor: [documentStyle.getPropertyValue('--cyan-500'), documentStyle.getPropertyValue('--red-500'), documentStyle.getPropertyValue('--blue-500')]

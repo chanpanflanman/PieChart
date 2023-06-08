@@ -5,21 +5,21 @@
       "code": "12i3ug2u",
       "name": "Charlie",
       "category": "Clothes",
-      "quantities": [345, 333, 443]
+      "quantities": [345]
     },
     {
       "id": 2,
       "code": "23j12k3",
       "name": "Dereck",
       "category": "Accessories",
-      "quantities": [123, 582, 220]
+      "quantities": [123]
     },
     {
       "id": 3,
       "code": "2lskdn21",
       "name": "Amelie",
       "category": "Jewelry",
-      "quantities": [673, 628, 130]
+      "quantities": [673]
 
     }
   ]

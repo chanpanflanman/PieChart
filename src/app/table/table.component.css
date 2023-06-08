@@ -1,11 +1,12 @@
 .pie {
-    display:block;
+    display: block;
     width: 200px;
 }
 
 .tableDistro {
     display: grid;
     grid-template-columns: 2.5fr 0.75fr;
+    grid-template-rows: 1fr 0.5fr;
     background-color: white;
 }
 
@@ -26,4 +27,21 @@
 .chartContainer {
     display: flex;
     justify-content: center;
+}
+
+.btnGenerate {
+    width: 150px;
+    height: 50px;
+}
+
+.tableDistro .btnGenerate {
+    margin-top: 20px;
+    grid-column: 1/ 2;
+    grid-row: 2 / 3;
+    justify-self: center;
+}
+
+.tableDistro .chartContainer {
+    grid-column: 2 / 3;
+    grid-row: -3 / -2;
 }
