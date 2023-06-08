@@ -6,7 +6,7 @@
 
 .tableDistro {
     display: grid;
-    width: 80%;
+    width: 85%;
     margin: auto;
     padding-top: 50px;
     grid-template-columns: 2.5fr 0.75fr;

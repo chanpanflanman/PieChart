@@ -7,7 +7,6 @@ import { ChartModule } from 'primeng/chart';
 import { PieComponent } from './pie/pie.component';
 import { TableComponent } from './table/table.component';
 import { TableModule } from 'primeng/table';
-import { RowComponent } from './row/row.component';
 import { HttpClientModule } from '@angular/common/http'
 import { ButtonModule } from 'primeng/button';
 
@@ -17,7 +16,6 @@ import { ButtonModule } from 'primeng/button';
     AppComponent,
     PieComponent,
     TableComponent,
-    RowComponent
   ],
   imports: [
     BrowserModule,
