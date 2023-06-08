@@ -24,7 +24,6 @@ export class PieComponent implements OnInit, OnChanges {
     }
 
     func() {
-
         const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');
         this.data = {
@@ -45,12 +44,11 @@ export class PieComponent implements OnInit, OnChanges {
                 tooltip: {
                     callbacks: {
                         label: (context: any) => {
-                            
                             let generateLabel;
                             
                             for (let i= 0; i < this.tableData.length; i++) {
                                 if (context.label == this.tableNames[i]) {
-                                    generateLabel = `${this.tableCategories[i]}: ${this.tableData[i]}`;
+                                    generateLabel = ` ${this.tableCategories[i]}: ${this.tableData[i]}`;
                                 }
                             }
                             return generateLabel;
@@ -60,7 +58,7 @@ export class PieComponent implements OnInit, OnChanges {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        usePointStyle: true,
+                        usePointStyle: false,
                         color: textColor
                     }
                 }

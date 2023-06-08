@@ -9,7 +9,7 @@ import { TableComponent } from './table/table.component';
 import { TableModule } from 'primeng/table';
 import { RowComponent } from './row/row.component';
 import { HttpClientModule } from '@angular/common/http'
-
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     ChartModule,
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

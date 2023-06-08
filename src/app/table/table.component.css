@@ -1,18 +1,16 @@
 .pie {
     display: block;
     width: 200px;
+    background-color: #dfffc557;
 }
 
 .tableDistro {
     display: grid;
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
     grid-template-columns: 2.5fr 0.75fr;
-    grid-template-rows: 1fr 0.5fr;
-    background-color: white;
-}
-
-.tableDistro .hidePie {
-    justify-self: right;
-    grid-column: -2 / -1;
+    grid-template-rows: 1fr
 }
 
 .showTitle {
@@ -26,19 +24,14 @@
 
 .chartContainer {
     display: flex;
-    justify-content: center;
-}
-
-.btnGenerate {
-    width: 10rem;
-    height: 3rem;
+    justify-content: right;
 }
 
 .tableDistro .btnGenerate {
     margin-top: 20px;
     grid-column: 1/ 2;
     grid-row: 2 / 3;
-    justify-self: center;
+    justify-self: left;
 }
 
 .tableDistro .chartContainer {
