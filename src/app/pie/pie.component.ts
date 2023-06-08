@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Chart, defaults } from 'chart.js';
 
 @Component({
     selector: 'app-pie',
@@ -6,14 +7,13 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
     styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit, OnChanges {
-    array: any = ['Charlie', 'Dereck', 'Amelie'];
-    @Input() dataNumbers: number[] = [];
+    @Input() tableNames: any = [];
+    @Input() tableData: number[] = [];
     @Input() requestedPieChart: boolean = false;
-    categories: any = ['Clothes', 'Accessories', 'Jewelry']
+    @Input() tableCategories: any = []
     data: any;
     options: any;
-
-
+    labelName: any;
     ngOnInit() {
     }
 
@@ -21,7 +21,6 @@ export class PieComponent implements OnInit, OnChanges {
         if (this.requestedPieChart) {
             this.func();
         }
-        console.log(changes);
     }
 
     func() {
@@ -29,19 +28,35 @@ export class PieComponent implements OnInit, OnChanges {
         const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');
         this.data = {
-            labels: this.array,
+            labels: this.tableNames,
             datasets: [
-                {   
-                    data: this.dataNumbers,
+                {
+                    data: this.tableData,
                     backgroundColor: [documentStyle.getPropertyValue('--cyan-400'), documentStyle.getPropertyValue('--red-400'), documentStyle.getPropertyValue('--blue-400')],
                     hoverBackgroundColor: [documentStyle.getPropertyValue('--cyan-500'), documentStyle.getPropertyValue('--red-500'), documentStyle.getPropertyValue('--blue-500')]
                 }
             ]
+
         };
 
         this.options = {
             responsive: true,
             plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: (context: any) => {
+                            
+                            let generateLabel;
+                            
+                            for (let i= 0; i < this.tableData.length; i++) {
+                                if (context.label == this.tableNames[i]) {
+                                    generateLabel = `${this.tableCategories[i]}: ${this.tableData[i]}`;
+                                }
+                            }
+                            return generateLabel;
+                        }
+                    }
+                },
                 legend: {
                     position: 'bottom',
                     labels: {
@@ -53,3 +68,4 @@ export class PieComponent implements OnInit, OnChanges {
         };
     }
 }
+

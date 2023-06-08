@@ -10,12 +10,12 @@ import { Prod } from '../models/prod';
 export class TableComponent implements OnInit {
 
   pieChartNumbers: number[] = [];
+  pieChartCats: any [] = []
+  pieChartNames: any [] = []
   products: Prod[] = [];
   cols: any[] = [];
   pieChartReq: boolean = false;
   rowTitle: boolean = false;
-  // nameForRow: string = '';
-
 
   constructor(private http: TablesService) { }
   ngOnInit(): void {
@@ -35,6 +35,8 @@ export class TableComponent implements OnInit {
   }
 
   generatePieChart() {
+    this.pieChartNames = this.products.map((a: any) => a.name);
+    this.pieChartCats = this.products.map((a: any) => a.category);
     this.pieChartNumbers = this.products.map((a: any) => a.quantities);
     this.pieChartReq = true;
     this.rowTitle = true;

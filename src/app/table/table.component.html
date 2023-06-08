@@ -17,7 +17,6 @@
     </p-table>
     <button class="btnGenerate" (click)="generatePieChart()">Generate Pie Chart</button>
     <div class="chartContainer">
-        <!-- <h3 [ngClass]="rowTitle? 'showTitle' : 'hideTitle'">{{nameForRow}}</h3> -->
-        <app-pie class="pie" [dataNumbers]="pieChartNumbers" [requestedPieChart]="pieChartReq"></app-pie>
+        <app-pie class="pie" [tableData]="pieChartNumbers" [tableNames]="pieChartNames" [tableCategories]="pieChartCats" [requestedPieChart]="pieChartReq"></app-pie>
     </div>
 </div>
